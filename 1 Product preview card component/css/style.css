@@ -1,0 +1,158 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat";
+  --primaria1: hsl(158, 36%, 37%);
+  --primaria1-escura: hsl(158, 36%, 26%);
+  --primaria2: hsl(30, 38%, 92%);
+  --cor1: hsl(212, 21%, 14%);
+  --cor2: hsl(228, 12%, 48%);
+  --cor3: hsl(0, 0%, 100%);
+  background-color: var(--primaria2);
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--cor3);
+  border-radius: 10px;
+  max-width: 700px;
+  max-height: 525px;
+}
+.text {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+}
+.attribution {
+  font-size: 0.875rem;
+  color: var(--cor2);
+  position: absolute;
+  top: 95%;
+  text-align: center;
+}
+p,
+h1,
+h2 {
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  font-family: "Fraunces";
+  color: var(--cor1);
+  line-height: 2.25rem;
+}
+img {
+  max-width: 100%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.price {
+  color: var(--primaria1);
+  font-family: "Fraunces";
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: inline;
+}
+.risk {
+  text-decoration: line-through;
+  display: inline;
+  font-size: 1rem;
+}
+.prices {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.p2 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.p1,
+.p2,
+.risk {
+  color: var(--cor2);
+}
+.p1 {
+  letter-spacing: 0.3em;
+  font-size: 1rem;
+}
+button {
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primaria1);
+  color: var(--cor3);
+  font-weight: 700;
+  position: relative;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--primaria1-escura);
+}
+button::after {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url(../images/icon-cart.svg);
+  position: absolute;
+  left: 75px;
+  top: 15px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    max-height: fit-content;
+    align-content: stretch;
+  }
+  img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+  .text {
+    padding: 20px;
+    gap: 20px;
+  }
+  .p1,
+  .p2 {
+    font-size: 0.8rem;
+    color: var(--cor2);
+  }
+  .p1 {
+    letter-spacing: 0.3em;
+  }
+  .price {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .risk {
+    font-size: 1rem;
+    color: var(--cor2);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+  button::after {
+    left: 70px;
+    top: 16px;
+  }
+}
